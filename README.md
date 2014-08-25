@@ -1,7 +1,18 @@
 web2py-migrate
 ==============
 
-Easy web2py database migration scaffolding for continuous integration or simple version control
+Easy [web2py](https://github.com/web2py/web2py/) database migration scaffolding for continuous integration
+or simple version control.
+
+This project aim is organize and control [web2py](https://github.com/web2py/web2py/) database migrate
+with version control using version control tags.
+
+So you can assign your versions with tags for some branchs. For example, if you have a dev and a master branch
+you can assign `master-migrate` and `dev-migrate` tags and your migrates for dev and master databases will be
+independently controlled.
+
+This is very important if you want a [Continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration)
+like environment.
 
 How to Use
 --------------
