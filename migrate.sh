@@ -64,6 +64,7 @@ export MIGRATE_ENV=0;
 #last modifications with databases
 rds_finish;
 echo "redefining tag"
-vc_remove_tag;
+#ignore if tag dont exists
+vc_remove_tag || true;
 vc_add_tag;
 echo "migrate ok!";
