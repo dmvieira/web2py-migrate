@@ -18,7 +18,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 #get functions from version control
 . ${DIR}/version_control/${VERSION_CONTROL_TYPE}.sh
 
-trap 'rds_restore; exit 1;' ERR
+trap 'rds_restore || exit 9; exit 1;' ERR
 trap 'echo "error with backup or killed by someone";' SIGKILL
 
 
