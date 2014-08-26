@@ -14,6 +14,10 @@ independently controlled.
 This is very important if you want a [Continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration)
 like environment.
 
+How it works
+--------------
+![Image of Workflow](http://www.gliffy.com/go/publish/image/6093083/L.png)
+
 How to Use
 --------------
 
