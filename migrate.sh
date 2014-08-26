@@ -18,13 +18,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 #get functions from version control
 . ${DIR}/version_control/${VERSION_CONTROL_TYPE}.sh
 
-trap 'rds_restore || exit 9; exit 1;' ERR
-trap 'echo "error with backup or killed by someone";' SIGKILL
-
+trap 'rds_restore || exit 10;'  INT TERM
 
 #execute web2py migrate script
 make_migrate(){
-    python ${WEB2PY}/web2py.py -S $APP -M -R $MIGRATE --no-banner || echo "your web2py path or migrate is wrong... configure on env_vars.sh" & exit 9;
+    python ${WEB2PY}/web2py.py -S $APP -M -R $MIGRATE --no-banner;
 
 }
 
@@ -32,7 +30,7 @@ make_migrate(){
 mkdir $DATABASES $APP_PATH/sessions $APP_PATH/errors || true;
 
 echo "making database backup";
-rds_backup || exit 9;
+rds_backup || exit 10;
 echo "executing pre-migrate sqls";
 rds_import pre-migrate.sql || true;
 echo "making .tables with old db.py and fake_migrate if tag exists";
@@ -64,7 +62,6 @@ export MIGRATE_ENV=0;
 #last modifications with databases
 rds_finish;
 echo "redefining tag"
-#ignore if tag dont exists
 vc_remove_tag || true;
 vc_add_tag || echo "error adding tag";
 echo "migrate ok!";

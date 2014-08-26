@@ -20,27 +20,27 @@ vc_go_to_tag()
 # get status from version control
 vc_status()
 {
-    git status;
+	git status;
 }
 
 # come back to default branch
 vc_back_to_branch()
 {
-    git reset --hard HEAD;
-    git checkout $BRANCH;
+    git reset --hard HEAD &&
+    git checkout $BRANCH &&
     git pull origin $BRANCH;
 }
 
 # remove that tag if migrate sucessful
 vc_remove_tag()
 {
-    git tag -D $TAG;
+    git tag -d $TAG &&
     git push origin :${TAG};
 }
 
 # remove that tag if migrate sucessful
 vc_add_tag()
 {
-    git tag $TAG;
+    git tag $TAG &&
     git push --tags;
 }
