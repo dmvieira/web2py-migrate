@@ -1,7 +1,7 @@
 web2py-migrate
 ==============
 
-Easy [web2py](https://github.com/web2py/web2py/) database migration scaffolding for continuous integration
+Easy [web2py](https://github.com/web2py/web2py/) database migration workflow and scaffolding for continuous integration
 or simple version control.
 
 This project aim is organize and control [web2py](https://github.com/web2py/web2py/) database migrate
