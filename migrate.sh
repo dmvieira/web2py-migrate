@@ -66,5 +66,5 @@ rds_finish;
 echo "redefining tag"
 #ignore if tag dont exists
 vc_remove_tag || true;
-vc_add_tag;
+vc_add_tag || echo "error adding tag";
 echo "migrate ok!";
