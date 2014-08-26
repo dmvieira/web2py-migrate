@@ -18,7 +18,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )";
 #get functions from version control
 . ${DIR}/version_control/${VERSION_CONTROL_TYPE}.sh
 
-trap 'rds_restore || exit 10;'  INT TERM
+trap 'rds_restore || exit 10;'  INT TERM ERR
 
 #execute web2py migrate script
 make_migrate(){
