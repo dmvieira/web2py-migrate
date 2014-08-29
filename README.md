@@ -8,7 +8,7 @@ This project aim is organize and control [web2py](https://github.com/web2py/web2
 with version control using version control tags.
 
 So you can assign your versions with tags for some branchs. For example, if you have a dev and a master branch
-you can assign `master-migrate` and `dev-migrate` tags and your migrates for dev and master databases will be
+you can assign `master-migrate` and `develop-migrate` tags and your migrates for dev and master databases will be
 independently controlled.
 
 This is very important if you want a [Continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration)
@@ -53,9 +53,16 @@ Now just use make command:
 
 `make`
 
+If you want more, you can do these tricks:
+* Add to sql foder before migrates sql for eg. prepopulate some table
+* Add to sql folder after migrates sql for eg. data migration
+* Add python scripts inside migrate.py to run some command after migration using your web2py app model
+
+`sql` folder need scripts using names: `before-BRANCH.sql` and `after-BRANCH.sql` like examples inside folder that use develop and master branchs.
+
 Now your first database migration is working and the TAG is now on your version control!
 
-If some errors occur, database will be backed up but tags are NOT RESTRUCTURED!!
+If some errors occur, database will be backed up but tags are NOT RESTRUCTURED and before and after migration scripts are NOT CLEANED!!
 
 For Developers
 ---------------
