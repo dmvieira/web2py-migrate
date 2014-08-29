@@ -44,3 +44,10 @@ vc_add_tag()
     git tag $TAG &&
     git push --tags;
 }
+
+# sending new code to version control
+vc_send()
+{
+    git commit -am "new code without before and after migrates scripts" &&
+    git push origin HEAD;
+}

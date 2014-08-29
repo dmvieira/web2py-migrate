@@ -41,3 +41,9 @@ vc_add_tag()
 {
     echo "adding tag..."
 }
+
+# send new code to version control
+vc_send()
+{
+    echo "sending new code..."
+}

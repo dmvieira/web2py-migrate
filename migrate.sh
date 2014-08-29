@@ -51,7 +51,7 @@ then
 fi
 echo "executing web2py migrate with deploy db.py";
 export FAKE_MIGRATE_ENV=0;
-#return current web2py folder, branch and commit
+#return current web2py folder, branch and version
 cd ${WEB2PY};
 #just printing status for information
 vc_status;
@@ -77,6 +77,8 @@ if [ $sendit -eq 1 ];
 then
     > sql/before-${BRANCH}.sql || echo "error cleaning before migrate";
     > sql/after-${BRANCH}.sql || echo "error cleaning after migrate";
+    #return current web2py folder to send new file
+    cd ${WEB2PY};
     vc_send || echo "error sending again to vc without after and before migrates";
 fi
 
