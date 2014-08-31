@@ -48,6 +48,8 @@ vc_add_tag()
 # sending new code to version control
 vc_send()
 {
+    git config --global user.email "test@server.com"
+    git config --global user.name "Test Server"
     git commit -am "new code without before and after migrates scripts" &&
     git push origin HEAD;
 }
