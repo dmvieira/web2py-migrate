@@ -69,6 +69,41 @@ For Developers
 
 There are dummy files inside folders `version_control` and `databases`.
 
-These dummy files are useful if you want to extend this project because all of needed functions are there to implement
-new database or version control support.
+These dummy files are useful if you want to extend this project because all of needed functions are there to implement new database or version control support.
+
+Implement support for a Version Control
+---------------
+---------------
+* Go to `version_control` folder
+* Copy dummy file
+* implement necessary bash functions:
+   * `vc_check_tag()`: function that return exit 0 if tag exists or error if not;
+   * `vc_go_to_tag()`: function that change your code version to tag version;
+   * `vc_status()`: function that show status of version control (just for logging);
+   * `vc_back_to_branch()`: function that back to your current version of code;
+   * `vc_remove_tag()`: function that remove tag from your version control;
+   * `vc_add_tag()`: function that add tag on your current version code;
+   * `vc_send()`: function that send new code version to your version control;
+* Finish! Now we should support your version control
  
+Implement support for a Database
+---------------
+---------------
+* Go to `databases` folder
+* Copy dummy file
+* implement necessary bash functions:
+   * `rds_import()`: function that can execute commands from a file into your database;
+   * `rds_backup()`: function that backup your current database (can be a copy or a dump or what you want);
+   * `rds_restore()`: function that restore your current database (if migrate fails);
+   * `rds_finish()`: function that clean your database or test server (eg. remove dumps or delete database copy, etc);
+* Finish! Now we should support your database
+
+Final Remarks
+---------------
+---------------
+
+You can implement any other extra function that you need, but those are really necessary.
+
+Any questions please send me a message.
+
+Enjoy ;)
