@@ -71,9 +71,8 @@ There are dummy files inside folders `version_control` and `databases`.
 
 These dummy files are useful if you want to extend this project because all of needed functions are there to implement new database or version control support.
 
-Implement support for a Version Control
----------------
----------------
+###Implement support for a Version Control
+
 * Go to `version_control` folder
 * Copy dummy file
 * implement necessary bash functions:
@@ -86,9 +85,8 @@ Implement support for a Version Control
    * `vc_send()`: function that send new code version to your version control;
 * Finish! Now we should support your version control
  
-Implement support for a Database
----------------
----------------
+###Implement support for a Database
+
 * Go to `databases` folder
 * Copy dummy file
 * implement necessary bash functions:
@@ -99,7 +97,6 @@ Implement support for a Database
 * Finish! Now we should support your database
 
 Final Remarks
----------------
 ---------------
 
 You can implement any other extra function that you need, but those are really necessary.
