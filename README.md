@@ -99,7 +99,7 @@ These dummy files are useful if you want to extend this project because all of n
 Final Remarks
 ---------------
 
-You can implement any other extra function that you need, but those are really necessary.
+You can implement any other extra function that you need, but these are really necessary.
 
 Any questions please send me a message.
 
