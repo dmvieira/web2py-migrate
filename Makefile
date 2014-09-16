@@ -1,4 +1,3 @@
-# Labsynapse repo migrate Makefile.
 # Migrate database or rollback on error.
 
 #for include env_vars uncomment following line:
