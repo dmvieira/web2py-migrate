@@ -35,7 +35,7 @@ vc_back_to_branch()
 vc_remove_tag()
 {
     git tag -d $TAG &&
-    git push origin :${TAG};
+    git push origin :${TAG} || true;
 }
 
 # remove that tag if migrate sucessful
