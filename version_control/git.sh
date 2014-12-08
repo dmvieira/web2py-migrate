@@ -14,13 +14,14 @@ vc_check_tag(){
 # go to tag version
 vc_go_to_tag()
 {
-    git checkout $TAG;
+    git checkout $TAG &&
+    git submodule update --recursive;
 }
 
 # get status from version control
 vc_status()
 {
-	git status;
+    git status;
 }
 
 # come back to default branch
@@ -28,7 +29,8 @@ vc_back_to_branch()
 {
     git reset --hard HEAD &&
     git checkout $BRANCH &&
-    git pull origin $BRANCH;
+    git pull origin $BRANCH &&
+    git submodule update --recursive;
 }
 
 # remove that tag if migrate sucessful
